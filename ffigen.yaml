@@ -1,0 +1,15 @@
+name: "LibGpiod"
+description: "Bindings to `LibGpiod`"
+output: "lib/src/bindings.g.dart"
+llvm-path:
+  - "/opt/toolchain/clang/11"
+headers:
+  entry-points:
+    - "linux/third_party/libgpiod-1_4_5/include/**.h"
+comments: false
+functions:
+  include:
+    - "gpiod_.*"
+macros:
+  include:
+    - "GPIOD_.*"
