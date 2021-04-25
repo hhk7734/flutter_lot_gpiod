@@ -1,1 +1,1 @@
-export 'src/gpiod.dart';
+export 'src/chip.dart';
