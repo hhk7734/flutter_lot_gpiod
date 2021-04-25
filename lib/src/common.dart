@@ -9,8 +9,8 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -21,14 +21,25 @@
  * SOFTWARE.
  */
 import 'dart:io';
-import 'dart:ffi' as ffi;
+import 'dart:ffi';
+
+import 'package:ffi/ffi.dart';
 
 import 'bindings.g.dart';
 
 LibGpiod? _libGpiod;
-LibGpiod get libLotI2c {
+LibGpiod get libGpiod {
   final path = Platform.environment['LIBLOT_GPIOD_PATH'];
   return _libGpiod ??= path != null
-      ? LibGpiod(ffi.DynamicLibrary.open(path))
-      : LibGpiod(ffi.DynamicLibrary.process());
+      ? LibGpiod(DynamicLibrary.open(path))
+      : LibGpiod(DynamicLibrary.process());
+}
+
+extension Int8PointerToString on Pointer<Int8> {
+  String toStringAfterNullCheck() =>
+      this == nullptr ? '' : cast<Utf8>().toDartString();
+}
+
+extension StringToInt8Pointer on String {
+  Pointer<Int8> toInt8Pointer() => toNativeUtf8().cast<Int8>();
 }
