@@ -24,4 +24,4 @@ set(lot_gpiod_bundled_libraries
     PARENT_SCOPE
 )
 
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third_party/libgpiod-1_4_5")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third_party/libgpiod-1_6_3")
