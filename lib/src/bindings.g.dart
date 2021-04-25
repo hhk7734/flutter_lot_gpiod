@@ -79,6 +79,29 @@ class LibGpiod {
   late final _dart_gpiod_ctxless_get_value _gpiod_ctxless_get_value =
       _gpiod_ctxless_get_value_ptr.asFunction<_dart_gpiod_ctxless_get_value>();
 
+  int gpiod_ctxless_get_value_ext(
+    ffi.Pointer<ffi.Int8> device,
+    int offset,
+    int active_low,
+    ffi.Pointer<ffi.Int8> consumer,
+    int flags,
+  ) {
+    return _gpiod_ctxless_get_value_ext(
+      device,
+      offset,
+      active_low,
+      consumer,
+      flags,
+    );
+  }
+
+  late final _gpiod_ctxless_get_value_ext_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_ctxless_get_value_ext>>(
+          'gpiod_ctxless_get_value_ext');
+  late final _dart_gpiod_ctxless_get_value_ext _gpiod_ctxless_get_value_ext =
+      _gpiod_ctxless_get_value_ext_ptr
+          .asFunction<_dart_gpiod_ctxless_get_value_ext>();
+
   int gpiod_ctxless_get_value_multiple(
     ffi.Pointer<ffi.Int8> device,
     ffi.Pointer<ffi.Uint32> offsets,
@@ -103,6 +126,34 @@ class LibGpiod {
   late final _dart_gpiod_ctxless_get_value_multiple
       _gpiod_ctxless_get_value_multiple = _gpiod_ctxless_get_value_multiple_ptr
           .asFunction<_dart_gpiod_ctxless_get_value_multiple>();
+
+  int gpiod_ctxless_get_value_multiple_ext(
+    ffi.Pointer<ffi.Int8> device,
+    ffi.Pointer<ffi.Uint32> offsets,
+    ffi.Pointer<ffi.Int32> values,
+    int num_lines,
+    int active_low,
+    ffi.Pointer<ffi.Int8> consumer,
+    int flags,
+  ) {
+    return _gpiod_ctxless_get_value_multiple_ext(
+      device,
+      offsets,
+      values,
+      num_lines,
+      active_low,
+      consumer,
+      flags,
+    );
+  }
+
+  late final _gpiod_ctxless_get_value_multiple_ext_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_ctxless_get_value_multiple_ext>>(
+          'gpiod_ctxless_get_value_multiple_ext');
+  late final _dart_gpiod_ctxless_get_value_multiple_ext
+      _gpiod_ctxless_get_value_multiple_ext =
+      _gpiod_ctxless_get_value_multiple_ext_ptr
+          .asFunction<_dart_gpiod_ctxless_get_value_multiple_ext>();
 
   int gpiod_ctxless_set_value(
     ffi.Pointer<ffi.Int8> device,
@@ -129,6 +180,35 @@ class LibGpiod {
           'gpiod_ctxless_set_value');
   late final _dart_gpiod_ctxless_set_value _gpiod_ctxless_set_value =
       _gpiod_ctxless_set_value_ptr.asFunction<_dart_gpiod_ctxless_set_value>();
+
+  int gpiod_ctxless_set_value_ext(
+    ffi.Pointer<ffi.Int8> device,
+    int offset,
+    int value,
+    int active_low,
+    ffi.Pointer<ffi.Int8> consumer,
+    ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_set_value_cb>> cb,
+    ffi.Pointer<ffi.Void> data,
+    int flags,
+  ) {
+    return _gpiod_ctxless_set_value_ext(
+      device,
+      offset,
+      value,
+      active_low,
+      consumer,
+      cb,
+      data,
+      flags,
+    );
+  }
+
+  late final _gpiod_ctxless_set_value_ext_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_ctxless_set_value_ext>>(
+          'gpiod_ctxless_set_value_ext');
+  late final _dart_gpiod_ctxless_set_value_ext _gpiod_ctxless_set_value_ext =
+      _gpiod_ctxless_set_value_ext_ptr
+          .asFunction<_dart_gpiod_ctxless_set_value_ext>();
 
   int gpiod_ctxless_set_value_multiple(
     ffi.Pointer<ffi.Int8> device,
@@ -158,6 +238,38 @@ class LibGpiod {
   late final _dart_gpiod_ctxless_set_value_multiple
       _gpiod_ctxless_set_value_multiple = _gpiod_ctxless_set_value_multiple_ptr
           .asFunction<_dart_gpiod_ctxless_set_value_multiple>();
+
+  int gpiod_ctxless_set_value_multiple_ext(
+    ffi.Pointer<ffi.Int8> device,
+    ffi.Pointer<ffi.Uint32> offsets,
+    ffi.Pointer<ffi.Int32> values,
+    int num_lines,
+    int active_low,
+    ffi.Pointer<ffi.Int8> consumer,
+    ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_set_value_cb>> cb,
+    ffi.Pointer<ffi.Void> data,
+    int flags,
+  ) {
+    return _gpiod_ctxless_set_value_multiple_ext(
+      device,
+      offsets,
+      values,
+      num_lines,
+      active_low,
+      consumer,
+      cb,
+      data,
+      flags,
+    );
+  }
+
+  late final _gpiod_ctxless_set_value_multiple_ext_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_ctxless_set_value_multiple_ext>>(
+          'gpiod_ctxless_set_value_multiple_ext');
+  late final _dart_gpiod_ctxless_set_value_multiple_ext
+      _gpiod_ctxless_set_value_multiple_ext =
+      _gpiod_ctxless_set_value_multiple_ext_ptr
+          .asFunction<_dart_gpiod_ctxless_set_value_multiple_ext>();
 
   int gpiod_ctxless_event_loop(
     ffi.Pointer<ffi.Int8> device,
@@ -251,6 +363,39 @@ class LibGpiod {
       _gpiod_ctxless_event_monitor_ptr
           .asFunction<_dart_gpiod_ctxless_event_monitor>();
 
+  int gpiod_ctxless_event_monitor_ext(
+    ffi.Pointer<ffi.Int8> device,
+    int event_type,
+    int offset,
+    int active_low,
+    ffi.Pointer<ffi.Int8> consumer,
+    ffi.Pointer<timespec> timeout,
+    ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_poll_cb>> poll_cb,
+    ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_handle_cb>> event_cb,
+    ffi.Pointer<ffi.Void> data,
+    int flags,
+  ) {
+    return _gpiod_ctxless_event_monitor_ext(
+      device,
+      event_type,
+      offset,
+      active_low,
+      consumer,
+      timeout,
+      poll_cb,
+      event_cb,
+      data,
+      flags,
+    );
+  }
+
+  late final _gpiod_ctxless_event_monitor_ext_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_ctxless_event_monitor_ext>>(
+          'gpiod_ctxless_event_monitor_ext');
+  late final _dart_gpiod_ctxless_event_monitor_ext
+      _gpiod_ctxless_event_monitor_ext = _gpiod_ctxless_event_monitor_ext_ptr
+          .asFunction<_dart_gpiod_ctxless_event_monitor_ext>();
+
   int gpiod_ctxless_event_monitor_multiple(
     ffi.Pointer<ffi.Int8> device,
     int event_type,
@@ -284,6 +429,42 @@ class LibGpiod {
       _gpiod_ctxless_event_monitor_multiple =
       _gpiod_ctxless_event_monitor_multiple_ptr
           .asFunction<_dart_gpiod_ctxless_event_monitor_multiple>();
+
+  int gpiod_ctxless_event_monitor_multiple_ext(
+    ffi.Pointer<ffi.Int8> device,
+    int event_type,
+    ffi.Pointer<ffi.Uint32> offsets,
+    int num_lines,
+    int active_low,
+    ffi.Pointer<ffi.Int8> consumer,
+    ffi.Pointer<timespec> timeout,
+    ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_poll_cb>> poll_cb,
+    ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_handle_cb>> event_cb,
+    ffi.Pointer<ffi.Void> data,
+    int flags,
+  ) {
+    return _gpiod_ctxless_event_monitor_multiple_ext(
+      device,
+      event_type,
+      offsets,
+      num_lines,
+      active_low,
+      consumer,
+      timeout,
+      poll_cb,
+      event_cb,
+      data,
+      flags,
+    );
+  }
+
+  late final _gpiod_ctxless_event_monitor_multiple_ext_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_ctxless_event_monitor_multiple_ext>>(
+          'gpiod_ctxless_event_monitor_multiple_ext');
+  late final _dart_gpiod_ctxless_event_monitor_multiple_ext
+      _gpiod_ctxless_event_monitor_multiple_ext =
+      _gpiod_ctxless_event_monitor_multiple_ext_ptr
+          .asFunction<_dart_gpiod_ctxless_event_monitor_multiple_ext>();
 
   int gpiod_ctxless_find_line(
     ffi.Pointer<ffi.Int8> name,
@@ -583,6 +764,19 @@ class LibGpiod {
           'gpiod_line_active_state');
   late final _dart_gpiod_line_active_state _gpiod_line_active_state =
       _gpiod_line_active_state_ptr.asFunction<_dart_gpiod_line_active_state>();
+
+  int gpiod_line_bias(
+    ffi.Pointer<gpiod_line> line,
+  ) {
+    return _gpiod_line_bias(
+      line,
+    );
+  }
+
+  late final _gpiod_line_bias_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_bias>>('gpiod_line_bias');
+  late final _dart_gpiod_line_bias _gpiod_line_bias =
+      _gpiod_line_bias_ptr.asFunction<_dart_gpiod_line_bias>();
 
   int gpiod_line_is_used(
     ffi.Pointer<gpiod_line> line,
@@ -1192,6 +1386,146 @@ class LibGpiod {
       _gpiod_line_set_value_bulk_ptr
           .asFunction<_dart_gpiod_line_set_value_bulk>();
 
+  int gpiod_line_set_config(
+    ffi.Pointer<gpiod_line> line,
+    int direction,
+    int flags,
+    int value,
+  ) {
+    return _gpiod_line_set_config(
+      line,
+      direction,
+      flags,
+      value,
+    );
+  }
+
+  late final _gpiod_line_set_config_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_config>>(
+          'gpiod_line_set_config');
+  late final _dart_gpiod_line_set_config _gpiod_line_set_config =
+      _gpiod_line_set_config_ptr.asFunction<_dart_gpiod_line_set_config>();
+
+  int gpiod_line_set_config_bulk(
+    ffi.Pointer<gpiod_line_bulk> bulk,
+    int direction,
+    int flags,
+    ffi.Pointer<ffi.Int32> values,
+  ) {
+    return _gpiod_line_set_config_bulk(
+      bulk,
+      direction,
+      flags,
+      values,
+    );
+  }
+
+  late final _gpiod_line_set_config_bulk_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_config_bulk>>(
+          'gpiod_line_set_config_bulk');
+  late final _dart_gpiod_line_set_config_bulk _gpiod_line_set_config_bulk =
+      _gpiod_line_set_config_bulk_ptr
+          .asFunction<_dart_gpiod_line_set_config_bulk>();
+
+  int gpiod_line_set_flags(
+    ffi.Pointer<gpiod_line> line,
+    int flags,
+  ) {
+    return _gpiod_line_set_flags(
+      line,
+      flags,
+    );
+  }
+
+  late final _gpiod_line_set_flags_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_flags>>(
+          'gpiod_line_set_flags');
+  late final _dart_gpiod_line_set_flags _gpiod_line_set_flags =
+      _gpiod_line_set_flags_ptr.asFunction<_dart_gpiod_line_set_flags>();
+
+  int gpiod_line_set_flags_bulk(
+    ffi.Pointer<gpiod_line_bulk> bulk,
+    int flags,
+  ) {
+    return _gpiod_line_set_flags_bulk(
+      bulk,
+      flags,
+    );
+  }
+
+  late final _gpiod_line_set_flags_bulk_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_flags_bulk>>(
+          'gpiod_line_set_flags_bulk');
+  late final _dart_gpiod_line_set_flags_bulk _gpiod_line_set_flags_bulk =
+      _gpiod_line_set_flags_bulk_ptr
+          .asFunction<_dart_gpiod_line_set_flags_bulk>();
+
+  int gpiod_line_set_direction_input(
+    ffi.Pointer<gpiod_line> line,
+  ) {
+    return _gpiod_line_set_direction_input(
+      line,
+    );
+  }
+
+  late final _gpiod_line_set_direction_input_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_direction_input>>(
+          'gpiod_line_set_direction_input');
+  late final _dart_gpiod_line_set_direction_input
+      _gpiod_line_set_direction_input = _gpiod_line_set_direction_input_ptr
+          .asFunction<_dart_gpiod_line_set_direction_input>();
+
+  int gpiod_line_set_direction_input_bulk(
+    ffi.Pointer<gpiod_line_bulk> bulk,
+  ) {
+    return _gpiod_line_set_direction_input_bulk(
+      bulk,
+    );
+  }
+
+  late final _gpiod_line_set_direction_input_bulk_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_direction_input_bulk>>(
+          'gpiod_line_set_direction_input_bulk');
+  late final _dart_gpiod_line_set_direction_input_bulk
+      _gpiod_line_set_direction_input_bulk =
+      _gpiod_line_set_direction_input_bulk_ptr
+          .asFunction<_dart_gpiod_line_set_direction_input_bulk>();
+
+  int gpiod_line_set_direction_output(
+    ffi.Pointer<gpiod_line> line,
+    int value,
+  ) {
+    return _gpiod_line_set_direction_output(
+      line,
+      value,
+    );
+  }
+
+  late final _gpiod_line_set_direction_output_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_direction_output>>(
+          'gpiod_line_set_direction_output');
+  late final _dart_gpiod_line_set_direction_output
+      _gpiod_line_set_direction_output = _gpiod_line_set_direction_output_ptr
+          .asFunction<_dart_gpiod_line_set_direction_output>();
+
+  int gpiod_line_set_direction_output_bulk(
+    ffi.Pointer<gpiod_line_bulk> bulk,
+    ffi.Pointer<ffi.Int32> values,
+  ) {
+    return _gpiod_line_set_direction_output_bulk(
+      bulk,
+      values,
+    );
+  }
+
+  late final _gpiod_line_set_direction_output_bulk_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_set_direction_output_bulk>>(
+          'gpiod_line_set_direction_output_bulk');
+  late final _dart_gpiod_line_set_direction_output_bulk
+      _gpiod_line_set_direction_output_bulk =
+      _gpiod_line_set_direction_output_bulk_ptr
+          .asFunction<_dart_gpiod_line_set_direction_output_bulk>();
+
   int gpiod_line_event_wait(
     ffi.Pointer<gpiod_line> line,
     ffi.Pointer<timespec> timeout,
@@ -1243,6 +1577,25 @@ class LibGpiod {
   late final _dart_gpiod_line_event_read _gpiod_line_event_read =
       _gpiod_line_event_read_ptr.asFunction<_dart_gpiod_line_event_read>();
 
+  int gpiod_line_event_read_multiple(
+    ffi.Pointer<gpiod_line> line,
+    ffi.Pointer<gpiod_line_event> events,
+    int num_events,
+  ) {
+    return _gpiod_line_event_read_multiple(
+      line,
+      events,
+      num_events,
+    );
+  }
+
+  late final _gpiod_line_event_read_multiple_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_event_read_multiple>>(
+          'gpiod_line_event_read_multiple');
+  late final _dart_gpiod_line_event_read_multiple
+      _gpiod_line_event_read_multiple = _gpiod_line_event_read_multiple_ptr
+          .asFunction<_dart_gpiod_line_event_read_multiple>();
+
   int gpiod_line_event_get_fd(
     ffi.Pointer<gpiod_line> line,
   ) {
@@ -1273,6 +1626,26 @@ class LibGpiod {
   late final _dart_gpiod_line_event_read_fd _gpiod_line_event_read_fd =
       _gpiod_line_event_read_fd_ptr
           .asFunction<_dart_gpiod_line_event_read_fd>();
+
+  int gpiod_line_event_read_fd_multiple(
+    int fd,
+    ffi.Pointer<gpiod_line_event> events,
+    int num_events,
+  ) {
+    return _gpiod_line_event_read_fd_multiple(
+      fd,
+      events,
+      num_events,
+    );
+  }
+
+  late final _gpiod_line_event_read_fd_multiple_ptr =
+      _lookup<ffi.NativeFunction<_c_gpiod_line_event_read_fd_multiple>>(
+          'gpiod_line_event_read_fd_multiple');
+  late final _dart_gpiod_line_event_read_fd_multiple
+      _gpiod_line_event_read_fd_multiple =
+      _gpiod_line_event_read_fd_multiple_ptr
+          .asFunction<_dart_gpiod_line_event_read_fd_multiple>();
 
   ffi.Pointer<gpiod_line> gpiod_line_get(
     ffi.Pointer<ffi.Int8> device,
@@ -1640,6 +2013,16 @@ class gpiod_line_event extends ffi.Struct {
   external int event_type;
 }
 
+const int GPIOD_CTXLESS_FLAG_OPEN_DRAIN = 1;
+
+const int GPIOD_CTXLESS_FLAG_OPEN_SOURCE = 2;
+
+const int GPIOD_CTXLESS_FLAG_BIAS_DISABLE = 4;
+
+const int GPIOD_CTXLESS_FLAG_BIAS_PULL_DOWN = 8;
+
+const int GPIOD_CTXLESS_FLAG_BIAS_PULL_UP = 16;
+
 const int GPIOD_CTXLESS_EVENT_RISING_EDGE = 1;
 
 const int GPIOD_CTXLESS_EVENT_FALLING_EDGE = 2;
@@ -1672,6 +2055,14 @@ const int GPIOD_LINE_ACTIVE_STATE_HIGH = 1;
 
 const int GPIOD_LINE_ACTIVE_STATE_LOW = 2;
 
+const int GPIOD_LINE_BIAS_AS_IS = 1;
+
+const int GPIOD_LINE_BIAS_DISABLE = 2;
+
+const int GPIOD_LINE_BIAS_PULL_UP = 3;
+
+const int GPIOD_LINE_BIAS_PULL_DOWN = 4;
+
 const int GPIOD_LINE_REQUEST_DIRECTION_AS_IS = 1;
 
 const int GPIOD_LINE_REQUEST_DIRECTION_INPUT = 2;
@@ -1689,6 +2080,12 @@ const int GPIOD_LINE_REQUEST_FLAG_OPEN_DRAIN = 1;
 const int GPIOD_LINE_REQUEST_FLAG_OPEN_SOURCE = 2;
 
 const int GPIOD_LINE_REQUEST_FLAG_ACTIVE_LOW = 4;
+
+const int GPIOD_LINE_REQUEST_FLAG_BIAS_DISABLE = 8;
+
+const int GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_DOWN = 16;
+
+const int GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP = 32;
 
 const int GPIOD_LINE_EVENT_RISING_EDGE = 1;
 
@@ -1710,6 +2107,22 @@ typedef _dart_gpiod_ctxless_get_value = int Function(
   ffi.Pointer<ffi.Int8> consumer,
 );
 
+typedef _c_gpiod_ctxless_get_value_ext = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Uint32 offset,
+  ffi.Int32 active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_ctxless_get_value_ext = int Function(
+  ffi.Pointer<ffi.Int8> device,
+  int offset,
+  int active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  int flags,
+);
+
 typedef _c_gpiod_ctxless_get_value_multiple = ffi.Int32 Function(
   ffi.Pointer<ffi.Int8> device,
   ffi.Pointer<ffi.Uint32> offsets,
@@ -1726,6 +2139,26 @@ typedef _dart_gpiod_ctxless_get_value_multiple = int Function(
   int num_lines,
   int active_low,
   ffi.Pointer<ffi.Int8> consumer,
+);
+
+typedef _c_gpiod_ctxless_get_value_multiple_ext = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Pointer<ffi.Uint32> offsets,
+  ffi.Pointer<ffi.Int32> values,
+  ffi.Uint32 num_lines,
+  ffi.Int32 active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_ctxless_get_value_multiple_ext = int Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Pointer<ffi.Uint32> offsets,
+  ffi.Pointer<ffi.Int32> values,
+  int num_lines,
+  int active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  int flags,
 );
 
 typedef gpiod_ctxless_set_value_cb = ffi.Void Function(
@@ -1752,6 +2185,28 @@ typedef _dart_gpiod_ctxless_set_value = int Function(
   ffi.Pointer<ffi.Void> data,
 );
 
+typedef _c_gpiod_ctxless_set_value_ext = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Uint32 offset,
+  ffi.Int32 value,
+  ffi.Int32 active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_set_value_cb>> cb,
+  ffi.Pointer<ffi.Void> data,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_ctxless_set_value_ext = int Function(
+  ffi.Pointer<ffi.Int8> device,
+  int offset,
+  int value,
+  int active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_set_value_cb>> cb,
+  ffi.Pointer<ffi.Void> data,
+  int flags,
+);
+
 typedef _c_gpiod_ctxless_set_value_multiple = ffi.Int32 Function(
   ffi.Pointer<ffi.Int8> device,
   ffi.Pointer<ffi.Uint32> offsets,
@@ -1772,6 +2227,30 @@ typedef _dart_gpiod_ctxless_set_value_multiple = int Function(
   ffi.Pointer<ffi.Int8> consumer,
   ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_set_value_cb>> cb,
   ffi.Pointer<ffi.Void> data,
+);
+
+typedef _c_gpiod_ctxless_set_value_multiple_ext = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Pointer<ffi.Uint32> offsets,
+  ffi.Pointer<ffi.Int32> values,
+  ffi.Uint32 num_lines,
+  ffi.Int32 active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_set_value_cb>> cb,
+  ffi.Pointer<ffi.Void> data,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_ctxless_set_value_multiple_ext = int Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Pointer<ffi.Uint32> offsets,
+  ffi.Pointer<ffi.Int32> values,
+  int num_lines,
+  int active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_set_value_cb>> cb,
+  ffi.Pointer<ffi.Void> data,
+  int flags,
 );
 
 typedef gpiod_ctxless_event_poll_cb = ffi.Int32 Function(
@@ -1858,6 +2337,32 @@ typedef _dart_gpiod_ctxless_event_monitor = int Function(
   ffi.Pointer<ffi.Void> data,
 );
 
+typedef _c_gpiod_ctxless_event_monitor_ext = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Int32 event_type,
+  ffi.Uint32 offset,
+  ffi.Int32 active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<timespec> timeout,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_poll_cb>> poll_cb,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_handle_cb>> event_cb,
+  ffi.Pointer<ffi.Void> data,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_ctxless_event_monitor_ext = int Function(
+  ffi.Pointer<ffi.Int8> device,
+  int event_type,
+  int offset,
+  int active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<timespec> timeout,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_poll_cb>> poll_cb,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_handle_cb>> event_cb,
+  ffi.Pointer<ffi.Void> data,
+  int flags,
+);
+
 typedef _c_gpiod_ctxless_event_monitor_multiple = ffi.Int32 Function(
   ffi.Pointer<ffi.Int8> device,
   ffi.Int32 event_type,
@@ -1882,6 +2387,34 @@ typedef _dart_gpiod_ctxless_event_monitor_multiple = int Function(
   ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_poll_cb>> poll_cb,
   ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_handle_cb>> event_cb,
   ffi.Pointer<ffi.Void> data,
+);
+
+typedef _c_gpiod_ctxless_event_monitor_multiple_ext = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> device,
+  ffi.Int32 event_type,
+  ffi.Pointer<ffi.Uint32> offsets,
+  ffi.Uint32 num_lines,
+  ffi.Int32 active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<timespec> timeout,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_poll_cb>> poll_cb,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_handle_cb>> event_cb,
+  ffi.Pointer<ffi.Void> data,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_ctxless_event_monitor_multiple_ext = int Function(
+  ffi.Pointer<ffi.Int8> device,
+  int event_type,
+  ffi.Pointer<ffi.Uint32> offsets,
+  int num_lines,
+  int active_low,
+  ffi.Pointer<ffi.Int8> consumer,
+  ffi.Pointer<timespec> timeout,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_poll_cb>> poll_cb,
+  ffi.Pointer<ffi.NativeFunction<gpiod_ctxless_event_handle_cb>> event_cb,
+  ffi.Pointer<ffi.Void> data,
+  int flags,
 );
 
 typedef _c_gpiod_ctxless_find_line = ffi.Int32 Function(
@@ -2063,6 +2596,14 @@ typedef _c_gpiod_line_active_state = ffi.Int32 Function(
 );
 
 typedef _dart_gpiod_line_active_state = int Function(
+  ffi.Pointer<gpiod_line> line,
+);
+
+typedef _c_gpiod_line_bias = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line> line,
+);
+
+typedef _dart_gpiod_line_bias = int Function(
   ffi.Pointer<gpiod_line> line,
 );
 
@@ -2430,6 +2971,90 @@ typedef _dart_gpiod_line_set_value_bulk = int Function(
   ffi.Pointer<ffi.Int32> values,
 );
 
+typedef _c_gpiod_line_set_config = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line> line,
+  ffi.Int32 direction,
+  ffi.Int32 flags,
+  ffi.Int32 value,
+);
+
+typedef _dart_gpiod_line_set_config = int Function(
+  ffi.Pointer<gpiod_line> line,
+  int direction,
+  int flags,
+  int value,
+);
+
+typedef _c_gpiod_line_set_config_bulk = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+  ffi.Int32 direction,
+  ffi.Int32 flags,
+  ffi.Pointer<ffi.Int32> values,
+);
+
+typedef _dart_gpiod_line_set_config_bulk = int Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+  int direction,
+  int flags,
+  ffi.Pointer<ffi.Int32> values,
+);
+
+typedef _c_gpiod_line_set_flags = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line> line,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_line_set_flags = int Function(
+  ffi.Pointer<gpiod_line> line,
+  int flags,
+);
+
+typedef _c_gpiod_line_set_flags_bulk = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+  ffi.Int32 flags,
+);
+
+typedef _dart_gpiod_line_set_flags_bulk = int Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+  int flags,
+);
+
+typedef _c_gpiod_line_set_direction_input = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line> line,
+);
+
+typedef _dart_gpiod_line_set_direction_input = int Function(
+  ffi.Pointer<gpiod_line> line,
+);
+
+typedef _c_gpiod_line_set_direction_input_bulk = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+);
+
+typedef _dart_gpiod_line_set_direction_input_bulk = int Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+);
+
+typedef _c_gpiod_line_set_direction_output = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line> line,
+  ffi.Int32 value,
+);
+
+typedef _dart_gpiod_line_set_direction_output = int Function(
+  ffi.Pointer<gpiod_line> line,
+  int value,
+);
+
+typedef _c_gpiod_line_set_direction_output_bulk = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+  ffi.Pointer<ffi.Int32> values,
+);
+
+typedef _dart_gpiod_line_set_direction_output_bulk = int Function(
+  ffi.Pointer<gpiod_line_bulk> bulk,
+  ffi.Pointer<ffi.Int32> values,
+);
+
 typedef _c_gpiod_line_event_wait = ffi.Int32 Function(
   ffi.Pointer<gpiod_line> line,
   ffi.Pointer<timespec> timeout,
@@ -2462,6 +3087,18 @@ typedef _dart_gpiod_line_event_read = int Function(
   ffi.Pointer<gpiod_line_event> event,
 );
 
+typedef _c_gpiod_line_event_read_multiple = ffi.Int32 Function(
+  ffi.Pointer<gpiod_line> line,
+  ffi.Pointer<gpiod_line_event> events,
+  ffi.Uint32 num_events,
+);
+
+typedef _dart_gpiod_line_event_read_multiple = int Function(
+  ffi.Pointer<gpiod_line> line,
+  ffi.Pointer<gpiod_line_event> events,
+  int num_events,
+);
+
 typedef _c_gpiod_line_event_get_fd = ffi.Int32 Function(
   ffi.Pointer<gpiod_line> line,
 );
@@ -2478,6 +3115,18 @@ typedef _c_gpiod_line_event_read_fd = ffi.Int32 Function(
 typedef _dart_gpiod_line_event_read_fd = int Function(
   int fd,
   ffi.Pointer<gpiod_line_event> event,
+);
+
+typedef _c_gpiod_line_event_read_fd_multiple = ffi.Int32 Function(
+  ffi.Int32 fd,
+  ffi.Pointer<gpiod_line_event> events,
+  ffi.Uint32 num_events,
+);
+
+typedef _dart_gpiod_line_event_read_fd_multiple = int Function(
+  int fd,
+  ffi.Pointer<gpiod_line_event> events,
+  int num_events,
 );
 
 typedef _c_gpiod_line_get = ffi.Pointer<gpiod_line> Function(
