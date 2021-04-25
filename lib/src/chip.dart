@@ -62,7 +62,7 @@ class Chip {
     if (line == nullptr) {
       throw 'GPIOD: Chip: error getting GPIO line from chip';
     }
-    return Line(line);
+    return Line(line, this);
   }
 
   Line findLine(String name) {
@@ -71,7 +71,7 @@ class Chip {
     if (line == nullptr) {
       throw 'GPIOD: Chip: error looking up GPIO line by name';
     }
-    return Line(line);
+    return Line(line, this);
   }
 
   void dispose() {
